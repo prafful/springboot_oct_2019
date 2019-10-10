@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+		
+		>
+		
+		
+		<bean id="blogBean" class="com.springcore.beginner.pojo.Blog">
+			<property name="gallery" ref="galleryBean"></property>
+		</bean>
+		
+		
+		<bean id="galleryBean" class="com.springcore.beginner.pojo.Gallery">
+			<property name="picture" ref="pictureBean"></property>
+		</bean>
+		
+		
+		<bean id="pictureBean" class="com.springcore.beginner.pojo.Picture"> </bean>
+		
+		
+		
+</beans>		
