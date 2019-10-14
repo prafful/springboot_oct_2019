@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/view")
+//@RequestMapping("/view")
 public class FirstSpringMVCController {
 	
 	@RequestMapping("/")
@@ -15,7 +15,7 @@ public class FirstSpringMVCController {
 		 * It will use the file path to send back as response.
 		 */
 		 // /WEB-INF/myviews/hello.jsp  
-		return "hello";
+		return "welcome";
 	}
 	
 	
