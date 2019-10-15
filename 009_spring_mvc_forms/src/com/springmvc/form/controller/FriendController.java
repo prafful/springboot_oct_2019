@@ -27,7 +27,7 @@ public class FriendController {
 		
 	}
 	
-	@RequestMapping("/openaddfriend")
+	@RequestMapping(value = "/openaddfriend", method = RequestMethod.GET)
 	public ModelAndView openAddFriendForm() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("addfriend");
@@ -39,16 +39,23 @@ public class FriendController {
 	
 	@RequestMapping("/openviewfriend")
 	public ModelAndView openViewFriendPage() {
+		//get the data or friends from the database!
+		//here, we are retrieving data from collection!
 		ModelAndView mv = new ModelAndView();
+		System.out.println("Count of friends: " + friends.size());
 		mv.setViewName("viewfriend");
+		mv.addObject("allfriends", friends);
 		return mv;
 	}
 	
-	@RequestMapping( value = "addnewfriend", method = RequestMethod.POST)
-	public ModelAndView addFriend(@ModelAttribute("frn") Friend friend ) {
+	@RequestMapping( value = "/addnewfriend", method = RequestMethod.POST)
+	public ModelAndView addFriend(@ModelAttribute("friend") Friend friend ) {
 		System.out.println("Name: "  + friend.getName());
 		System.out.println("Location: " + friend.getLocation());
-		return null;
+		System.out.println("Years: " + friend.getYears());
+		friends.add(friend);
+		return new ModelAndView("redirect:/openviewfriend");
+		
 		
 	}
 	

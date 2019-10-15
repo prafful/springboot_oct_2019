@@ -11,18 +11,25 @@
 </head>
 <body>
 	<h1>Add Friend</h1>
+	<!-- This page will receive instance of type Friend class
+			when it opens, from the controller! -->
 	<f:form method="post" action="addnewfriend">
 		<label>Name: </label>
+		<!-- name is class variable in friend instance which is received -->
 		<f:input path="name"/>
 		<br>
 		<label>Location: </label>
+		<!-- location is class variable in friend instance which is received -->
 		<f:input path="location"/>
 		<br>
 		<label>Duration: </label>
+		<!-- years is class variable in friend instance which is received -->
 		<f:input path="years"/>
 		<br>
 		<input type="submit" value="Add">
-	
+		<!-- on submit, name, location and years 
+			(friend instance with values) will be sent along
+				with post request -->
 	</f:form>
 	
 </body>
