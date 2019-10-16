@@ -29,7 +29,7 @@
 		<mvc:annotation-driven/>
 		
 		<!-- configure database driver, url, username and password -->
-		<bean id="dataSource" class="com.springframework.jdbc.datasource.DriverManagerDataSource">
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 			<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 			<property name="url" value="jdbc:mysql://localhost:3306/springhibernateoct2019"></property>
 			<property name="username" value="root"></property>
@@ -41,7 +41,7 @@
 			<property name="packagesToScan" value="com.springmvc.hibernateapp"></property>
 			<property name="hibernateProperties">
 				<props>
-					<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+					<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 					<prop key="hibernate.show_sql">true</prop>
 					<prop key="hibernate.hbm2ddl.auto">update</prop>
 				</props>

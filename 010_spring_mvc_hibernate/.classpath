@@ -13,10 +13,30 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Commons Logging"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSTL"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SpringFramework"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYSQL Connector J"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Commons Logging">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSTL">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SpringFramework">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MYSQL Connector J">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
