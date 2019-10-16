@@ -14,7 +14,7 @@ import com.springmvc.hibernateapp.service.FriendService;
 
 @Controller
 public class FriendController {
-	
+
 	@Autowired
 	private FriendService friendService;
 
@@ -22,28 +22,25 @@ public class FriendController {
 	public ModelAndView welcome() {
 		return new ModelAndView("index");
 	}
-	
+
 	@RequestMapping("/openaddfriend")
 	public ModelAndView openAddFriendPage() {
 		return new ModelAndView("addfriend", "command", new FriendEntity());
 	}
-	
+
 	@RequestMapping("/openviewfriend")
 	public ModelAndView openViewFriendPage() {
-		
 		List<FriendEntity> allfriends = friendService.getAllFriends();
-		
 		return new ModelAndView("viewfriend", "friends", allfriends);
 	}
-	
+
 	@RequestMapping(value = "addnewfriend", method = RequestMethod.POST)
 	public ModelAndView addNewFriend(@ModelAttribute("friend") FriendEntity fe) {
-		
+
 		friendService.addNewFriend(fe);
-		
-		
+
 		return new ModelAndView("redirect:/openviewfriend");
-		
+
 	}
-	
+
 }
