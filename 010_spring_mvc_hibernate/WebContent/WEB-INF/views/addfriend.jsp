@@ -15,6 +15,12 @@
 			when it opens, from the controller! -->
 	<f:form method="post" action="addnewfriend">
 		<table>
+		<tr>
+			<td>Id: </td>
+			<td>
+				<f:input path="id"  readonly="true"/>
+			</td>
+		</tr>
 			<tr>
 				<td><label>Name: </label></td>
 				<td>

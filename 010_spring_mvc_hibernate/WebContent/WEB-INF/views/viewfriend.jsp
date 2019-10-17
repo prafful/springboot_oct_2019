@@ -33,13 +33,16 @@
 				<d:url var="delete" value="deletefriend">
 					<d:param name="id" value="${frn.id}"></d:param>
 				</d:url>
+				<d:url var="update" value="updatefriend">
+					<d:param name="id" value="${frn.id}"></d:param>
+				</d:url>
 				<tr>
 					<td>${frn.id}</td>
 					<td>${frn.name}</td>
 					<td>${frn.location}</td>
 					<td>${frn.years}</td>
 					<td><a href="${delete}">Delete</a></td>
-					<td><a href="#">Update</a></td>
+					<td><a href="${update}">Update</a></td>
 				</tr>
 			</d:forEach>
 		</tbody>

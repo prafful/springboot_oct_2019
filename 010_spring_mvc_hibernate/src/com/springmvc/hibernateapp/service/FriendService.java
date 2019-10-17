@@ -33,4 +33,9 @@ public class FriendService {
 		friendDao.deleteFriend(id);
 	}
 
+	public FriendEntity updateFriend(Integer id) {
+		// TODO Auto-generated method stub
+		return friendDao.updateFriend(id);
+	}
+
 }

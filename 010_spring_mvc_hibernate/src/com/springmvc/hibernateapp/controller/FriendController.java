@@ -37,7 +37,7 @@ public class FriendController {
 
 	@RequestMapping(value = "addnewfriend", method = RequestMethod.POST)
 	public ModelAndView addNewFriend(@ModelAttribute("friend") FriendEntity fe) {
-
+		System.out.println("Working with Id:" + fe.getId());
 		friendService.addNewFriend(fe);
 
 		return new ModelAndView("redirect:/openviewfriend");
@@ -49,6 +49,14 @@ public class FriendController {
 		System.out.println(id);
 		friendService.deleteFriend(id);
 		return new ModelAndView("redirect:/openviewfriend");
+	}
+	
+	@RequestMapping(value = "/updatefriend",method = RequestMethod.GET)
+	public ModelAndView updateFriend(@RequestParam("id") Integer id) {
+		System.out.println("Get friend with id " + id + " to update!");
+		FriendEntity updateFe = friendService.updateFriend(id);
+		System.out.println("Updating... NEXT!");
+		return new ModelAndView("addfriend", "command", updateFe);
 	}
 
 }

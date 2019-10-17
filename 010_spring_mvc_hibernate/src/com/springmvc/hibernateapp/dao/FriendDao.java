@@ -30,8 +30,17 @@ public class FriendDao {
 			System.out.println("Open New Session");
 		}
 
-		session.save(fe);
-		// session.flush();
+		//check if the fe exists
+		if(fe.getId() !=0 ) {
+			//it is pre-existing record
+			System.out.println("Updating...");
+			session.update(fe);
+		}else {
+			//it is new record
+			session.save(fe);
+		}
+		
+		session.flush();
 		// session.close();
 		// sessionFactory.close();
 
@@ -83,6 +92,31 @@ public class FriendDao {
 		//session.flush();
 		
 
+	}
+
+	public FriendEntity updateFriend(Integer id) {
+		// TODO Auto-generated method stub
+		System.out.println("In DAO to update friend with id " + id);
+		Session session = null;
+		//Transaction tx = null;
+		try {
+
+			session = sessionFactory.getCurrentSession();
+			System.out.println("Get Current Session");
+		} catch (Exception e) {
+
+			session = sessionFactory.openSession();
+			System.out.println("Open New Session");
+		}
+		//tx = session.beginTransaction();
+		//first check if the friend with given id exists?
+		FriendEntity fe = session.get(FriendEntity.class, id);
+		if(fe != null) {
+			return fe;
+		}else {
+			System.out.println("Friend with id "+ id + " not found for update!");
+		}
+		return fe;
 	}
 
 }
