@@ -4,7 +4,7 @@
   <absolute-ordering></absolute-ordering>
   <welcome-file-list>
    
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>home.spring</welcome-file>
    
   </welcome-file-list>
   <servlet>
@@ -13,7 +13,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>springmvc-form</servlet-name>
-  	<url-pattern>/</url-pattern>
+  	<url-pattern>*.spring</url-pattern>
   </servlet-mapping>
   
 </web-app>

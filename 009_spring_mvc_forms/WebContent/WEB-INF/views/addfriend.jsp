@@ -13,7 +13,7 @@
 	<h1>Add Friend</h1>
 	<!-- This page will receive instance of type Friend class
 			when it opens, from the controller! -->
-	<f:form method="post" action="addnewfriend">
+	<f:form method="post" action="addnewfriend.spring">
 		<label>Name: </label>
 		<!-- name is class variable in friend instance which is received -->
 		<f:input path="name"/>

@@ -17,7 +17,7 @@ public class FriendController {
 	
 	List<Friend> friends = new ArrayList<Friend>();
 	
-	@RequestMapping("/")
+	@RequestMapping("/home")
 	public ModelAndView welcome() {
 		//Use modelandview to link model (POJO) with view (.jsp)
 		ModelAndView mv = new ModelAndView();
@@ -55,7 +55,7 @@ public class FriendController {
 		System.out.println("Location: " + friend.getLocation());
 		System.out.println("Years: " + friend.getYears());
 		friends.add(friend);
-		return new ModelAndView("redirect:/openviewfriend");
+		return new ModelAndView("redirect:/openviewfriend.spring");
 		
 		
 	}

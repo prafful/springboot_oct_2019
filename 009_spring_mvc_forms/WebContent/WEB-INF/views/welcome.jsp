@@ -13,9 +13,9 @@
 	Location: ${location}
 	<hr>
 	<h2>Manage Friends!</h2>
-	<a href="openaddfriend">Add Friend</a>
+	<a href="openaddfriend.spring">Add Friend</a>
 	<br>
-	<a href="openviewfriend">View Friends!</a>
+	<a href="openviewfriend.spring">View Friends!</a>
 	
 </body>
 </html>
