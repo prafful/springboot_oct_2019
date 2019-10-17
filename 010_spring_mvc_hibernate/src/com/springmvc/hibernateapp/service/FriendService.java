@@ -28,4 +28,9 @@ public class FriendService {
 		return friendDao.getAllFriends();
 	}
 
+	public void deleteFriend(Integer id) {
+		// TODO Auto-generated method stub
+		friendDao.deleteFriend(id);
+	}
+
 }

@@ -20,17 +20,26 @@
 	<table border="1">
 		<thead>
 			<tr>
+				<th>Id</th>
 				<th>Name</th>
 				<th>Location</th>
 				<th>Years</th>
+				<th colspan="2">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
 			<d:forEach var="frn" items="${friends}">
+				<!-- setup a variable and map it with route/url -->
+				<d:url var="delete" value="deletefriend">
+					<d:param name="id" value="${frn.id}"></d:param>
+				</d:url>
 				<tr>
-					<td>${frn.name} </td>
-					<td>${frn.location} </td>
+					<td>${frn.id}</td>
+					<td>${frn.name}</td>
+					<td>${frn.location}</td>
 					<td>${frn.years}</td>
+					<td><a href="${delete}">Delete</a></td>
+					<td><a href="#">Update</a></td>
 				</tr>
 			</d:forEach>
 		</tbody>
