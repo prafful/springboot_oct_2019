@@ -23,6 +23,8 @@ public class TankDao {
 
 	public List getAllTanks() {
 		// TODO Auto-generated method stub
+		
+		
 		return tankRepository.findAll();
 	}
 
@@ -59,6 +61,22 @@ public class TankDao {
 		// TODO Auto-generated method stub
 		tankRepository.deleteById(id);
 		return tankRepository.findAll();
+	}
+
+	public List<WaterTank> getTankByLocation(String loc) {
+		// TODO Auto-generated method stub
+		//return tankRepository.findByLocation(loc);
+		return tankRepository.findByLocationEndsWith(loc);
+	}
+
+	public List<WaterTank> getTankByLocationEndsWith(String loc) {
+		// TODO Auto-generated method stub
+		return tankRepository.findByLocationEndsWith(loc);
+	}
+
+	public List<WaterTank> getTankByLocationContaining(String loc) {
+		// TODO Auto-generated method stub
+		return tankRepository.findByLocationContaining(loc);
 	}
 
 }

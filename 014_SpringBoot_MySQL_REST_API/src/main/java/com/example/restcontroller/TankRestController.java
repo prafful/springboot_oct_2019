@@ -1,6 +1,7 @@
 package com.example.restcontroller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -41,10 +42,7 @@ public class TankRestController {
 		return tankService.getAllTanks();
 	}
 	
-	@GetMapping("/tank/{id}")
-	public WaterTank getTankById(@PathVariable Long id) {
-		return tankService.getTankById(id);
-	}
+	
 	
 	@PostMapping("/update/{id}")
 	public List updateById(@PathVariable Long id, @RequestBody WaterTank wt) {
@@ -56,5 +54,24 @@ public class TankRestController {
 		return tankService.deleteTankById(id);
 	}
 	
+	@GetMapping("/tank/{id}")
+	public WaterTank getTankById(@PathVariable Long id) {
+		return tankService.getTankById(id);
+	}
+	
+	@GetMapping("/location/{loc}")
+	public List<WaterTank> getTankByLocation(@PathVariable String loc){
+		return tankService.getTankByLocation(loc);
+	}
+	
+	@GetMapping("/location/endswith/{loc}")
+	public List<WaterTank> getTankByLocationEndsWith(@PathVariable String loc){
+		return tankService.getTankByLocationEndsWith(loc);
+	}
+	
+	@GetMapping("/location/contain/{loc}")
+	public List<WaterTank> getTankByLocationContaining(@PathVariable String loc){
+		return tankService.getTankByLocationContaining(loc);
+	}
 
 }

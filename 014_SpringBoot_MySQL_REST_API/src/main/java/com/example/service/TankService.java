@@ -1,6 +1,7 @@
 package com.example.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,21 @@ public class TankService {
 	public List deleteTankById(Long id) {
 		// TODO Auto-generated method stub
 		return tankDao.deleteTankById(id);
+	}
+
+	public List<WaterTank> getTankByLocation(String loc) {
+		// TODO Auto-generated method stub
+		return tankDao.getTankByLocation(loc);
+	}
+
+	public List<WaterTank> getTankByLocationEndsWith(String loc) {
+		// TODO Auto-generated method stub
+		return tankDao.getTankByLocationEndsWith(loc);
+	}
+
+	public List<WaterTank> getTankByLocationContaining(String loc) {
+		// TODO Auto-generated method stub
+		return tankDao.getTankByLocationContaining(loc);
 	}
 
 }
