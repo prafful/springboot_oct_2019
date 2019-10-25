@@ -17,7 +17,7 @@ import com.example.entity.WaterTank;
 import com.example.service.TankService;
 
 @RestController
-@RequestMapping("/watertank/api/v1")
+@RequestMapping("/api")
 public class TankRestController {
 
 	@Autowired
@@ -25,53 +25,55 @@ public class TankRestController {
 		
 	//@RequestMapping(value = "/", method = RequestMethod.GET)
 	//@RequestMapping("/")
+	//Route will Map to http://locahost:port/api/ 
 	@GetMapping("/")
 	public String welcome() {
 		return "Water Tank App! Ver 4.0";
 	}
 	
+	//Route will Map to http://locahost:port/api/tank/add
 	//@RequestMapping(value = "/add", method = RequestMethod.POST)
-	@PostMapping("/add")
+	@PostMapping("/tank/add")
 	public List addTank(@RequestBody WaterTank wt) {
 		return tankService.addTank(wt);
 		
 	}
 	
-	@GetMapping("/all")
+	@GetMapping("/tank/get/all")
 	public List getAllTanks() {
 		return tankService.getAllTanks();
 	}
 	
-	
-	
-	@PostMapping("/update/{id}")
-	public List updateById(@PathVariable Long id, @RequestBody WaterTank wt) {
-		return tankService.updateById(id, wt);
-	}
-	
-	@DeleteMapping("/delete/{id}")
-	public List deleteTankById(@PathVariable Long id) {
-		return tankService.deleteTankById(id);
-	}
-	
-	@GetMapping("/tank/{id}")
+	@GetMapping("/tank/get/tank/{id}")
 	public WaterTank getTankById(@PathVariable Long id) {
 		return tankService.getTankById(id);
 	}
 	
-	@GetMapping("/location/{loc}")
+	@GetMapping("/tank/get/location/{loc}")
 	public List<WaterTank> getTankByLocation(@PathVariable String loc){
 		return tankService.getTankByLocation(loc);
 	}
 	
-	@GetMapping("/location/endswith/{loc}")
+	@GetMapping("/tank/get/location/endswith/{loc}")
 	public List<WaterTank> getTankByLocationEndsWith(@PathVariable String loc){
 		return tankService.getTankByLocationEndsWith(loc);
 	}
 	
-	@GetMapping("/location/contain/{loc}")
+	@GetMapping("/tank/get/location/contain/{loc}")
 	public List<WaterTank> getTankByLocationContaining(@PathVariable String loc){
 		return tankService.getTankByLocationContaining(loc);
 	}
+	
+	@PostMapping("/tank/update/{id}")
+	public List updateById(@PathVariable Long id, @RequestBody WaterTank wt) {
+		return tankService.updateById(id, wt);
+	}
+	
+	@DeleteMapping("/tank/delete/{id}")
+	public List deleteTankById(@PathVariable Long id) {
+		return tankService.deleteTankById(id);
+	}
+	
+	
 
 }
