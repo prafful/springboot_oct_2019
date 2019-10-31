@@ -43,7 +43,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 		  
 		  http.authorizeRequests()
 		  .antMatchers(HttpMethod.GET,"/api/**").hasAnyRole("MANAGER","ADMIN","USER")
-		  .antMatchers(HttpMethod.POST, "/api/tank/**").hasAnyRole("MANAGER","ADMIN")
+		  .antMatchers(HttpMethod.POST, "/api/tank/add/**", "/api/tank/update/**").hasAnyRole("MANAGER","ADMIN")
 		  .antMatchers(HttpMethod.DELETE, "/api/tank/delete/**").hasRole("ADMIN")
 		  .and()
 		  .httpBasic()

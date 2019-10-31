@@ -38,7 +38,7 @@ public class TankRestController {
 		return tankService.addTank(wt);
 		
 	}
-	
+	//http://locahost:port/api/tank/get/all
 	@GetMapping("/tank/get/all")
 	public List getAllTanks() {
 		return tankService.getAllTanks();
