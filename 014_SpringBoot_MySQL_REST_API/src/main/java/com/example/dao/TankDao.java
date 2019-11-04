@@ -23,8 +23,6 @@ public class TankDao {
 
 	public List getAllTanks() {
 		// TODO Auto-generated method stub
-		
-		
 		return tankRepository.findAll();
 	}
 

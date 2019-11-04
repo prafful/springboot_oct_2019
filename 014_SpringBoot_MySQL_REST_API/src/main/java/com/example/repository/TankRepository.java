@@ -23,4 +23,5 @@ public interface TankRepository extends JpaRepository<WaterTank, Long> {
 	@Query("from WaterTank wt where wt.location like %:loc%")
 	List<WaterTank> findByLocationContaining(String loc); 
 	
+
 }
